@@ -3,7 +3,7 @@ package com.techelevator.App;
 import java.io.File;
 import java.util.Scanner;
 
-public class VendingMachineCLI {
+public class VendingMachineCLI implements displayItems{
 	private Scanner userInput;
 	private VendoMatic600 vendoMatic600;
 	boolean continueRunning = true;
@@ -32,7 +32,9 @@ public class VendingMachineCLI {
 			String userSelection = userInput.nextLine().toString().strip();
 
 			if (userSelection.equals("1")){
-				// displayItems map
+				displayItems.values();
+				// test to see what this does . . .
+
 			} else if (userSelection.equals("2")) {
 				displaySubMenu();
 			} else if (userSelection.equals("3")) {
