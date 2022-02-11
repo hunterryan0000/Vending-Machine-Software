@@ -1,12 +1,15 @@
 package com.techelevator.App;
 
 import java.io.File;
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.sql.Array;
+import java.util.*;
 
-public class VendingMachineCLI implements displayItems{
+public class VendingMachineCLI{
 	private Scanner userInput;
 	private VendoMatic600 vendoMatic600;
 	boolean continueRunning = true;
+
 
 
 	public VendingMachineCLI() {
@@ -24,7 +27,24 @@ public class VendingMachineCLI implements displayItems{
 		displayWelcomeMessage(vendoMatic600);
 		// Test the SalesReport & make an order
 
-		// ToDo - Add Code here to show menu, etc.
+		Map<String,String>displayItems = new HashMap<>();
+		displayItems.put("D1", "Coca-Cola");
+		displayItems.put("D2", "Sprite");
+		displayItems.put("D3", "Gatorade");
+		displayItems.put("D4", "Dr. Pepper");
+		displayItems.put("C1", "Skittles");
+		displayItems.put("C2", "Snickers");
+		displayItems.put("C3", "M&Ms");
+		displayItems.put("C4", "Reese's");
+		displayItems.put("B1", "Doritos");
+		displayItems.put("B2", "Flaming Hot Cheetos");
+		displayItems.put("B3", "Baked Sour-Cream & Onions");
+		displayItems.put("B4", "Ghost Pepper Chips");
+		displayItems.put("A1", "Big Red");
+		displayItems.put("A2", "Spearmint");
+		displayItems.put("A3", "Peppermint");
+		displayItems.put("A4", "Hubba Bubba");
+
 
 		while (continueRunning) {
 			displayMainMenu();
@@ -32,7 +52,9 @@ public class VendingMachineCLI implements displayItems{
 			String userSelection = userInput.nextLine().toString().strip();
 
 			if (userSelection.equals("1")){
-				displayItems.values();
+				for (String i : displayItems.keySet()) {
+					System.out.println(i + ") " + displayItems.get(i));
+				}
 				// test to see what this does . . .
 
 			} else if (userSelection.equals("2")) {
