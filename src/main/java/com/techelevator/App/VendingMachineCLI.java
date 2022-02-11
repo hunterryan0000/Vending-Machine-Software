@@ -1,5 +1,8 @@
 package com.techelevator.App;
 
+import com.techelevator.Product.Beverage;
+import com.techelevator.Product.Product;
+
 import java.io.File;
 import java.math.BigDecimal;
 import java.sql.Array;
@@ -115,7 +118,8 @@ public class VendingMachineCLI{
 
 		} else if (userSelection.equalsIgnoreCase("B")) {
 			System.out.println("Which Item do you want?  Select by Item Number (for example A1): ");
-			
+			String selectItem = userInput.nextLine().strip();
+			String type = selectItem.toLowerCase();
 
 		} else if (userSelection.equalsIgnoreCase("C")){
 			continueRunning = false;

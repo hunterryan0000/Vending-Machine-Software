@@ -20,4 +20,6 @@ public class VendoMatic600 {
     public String getName(){
         return name;
     }
+
+
 }
