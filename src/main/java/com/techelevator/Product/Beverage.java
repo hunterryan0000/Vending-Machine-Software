@@ -37,10 +37,7 @@ public class Beverage extends Product {
         return total;
     }
 
-    Map<String, String> beverageItems = new HashMap<String, String>() {{
 
-
-    }};
 
 
 }

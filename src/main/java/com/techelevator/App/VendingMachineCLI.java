@@ -27,7 +27,7 @@ public class VendingMachineCLI{
 		displayWelcomeMessage(vendoMatic600);
 		// Test the SalesReport & make an order
 
-		Map<String,String>displayItems = new HashMap<>();
+		Map<String,String>displayItems = new TreeMap<>();
 		displayItems.put("D1", "Coca-Cola");
 		displayItems.put("D2", "Sprite");
 		displayItems.put("D3", "Gatorade");
@@ -45,6 +45,23 @@ public class VendingMachineCLI{
 		displayItems.put("A3", "Peppermint");
 		displayItems.put("A4", "Hubba Bubba");
 
+		Map<String,String>costItems = new TreeMap<>();
+		costItems.put("D1", "1.50");
+		costItems.put("D2", "1.50");
+		costItems.put("D3", "1.50");
+		costItems.put("D4", "1.50");
+		costItems.put("C1", "1.00");
+		costItems.put("C2", "1.00");
+		costItems.put("C3", "1.00");
+		costItems.put("C4", "1.00");
+		costItems.put("B1", "0.75");
+		costItems.put("B2", "0.75");
+		costItems.put("B3", "0.75");
+		costItems.put("B4", "0.75");
+		costItems.put("A1", "0.50");
+		costItems.put("A2", "0.50");
+		costItems.put("A3", "0.50");
+		costItems.put("A4", "0.50");
 
 		while (continueRunning) {
 			displayMainMenu();
@@ -52,8 +69,8 @@ public class VendingMachineCLI{
 			String userSelection = userInput.nextLine().toString().strip();
 
 			if (userSelection.equals("1")){
-				for (String i : displayItems.keySet()) {
-					System.out.println(i + ") " + displayItems.get(i));
+				for (String i : costItems.keySet()) {
+					System.out.println(i + ") " + displayItems.get(i) +" $"+ costItems.get(i));
 				}
 				// test to see what this does . . .
 
@@ -97,6 +114,8 @@ public class VendingMachineCLI{
 		if (userSelection.equalsIgnoreCase("A")){
 
 		} else if (userSelection.equalsIgnoreCase("B")) {
+			System.out.println("Which Item do you want?  Select by Item Number (for example A1): ");
+			
 
 		} else if (userSelection.equalsIgnoreCase("C")){
 			continueRunning = false;
