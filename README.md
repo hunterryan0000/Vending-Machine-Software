@@ -13,3 +13,8 @@ convenience sake.
 4. Sales Report** Optional hidden menu item
 
 Review the PDF file for the criteria required for each case story.
+
+Missing: 
+Add products inside map
+Inside vending machine - should be map and ability to purchase
+CLI - instance of vendomatic and file i/o reading
